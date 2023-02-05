@@ -165,9 +165,9 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 exec {
-    commandLine "echo", "::set-output name=version::${project.version}"
+    commandLine "echo", "\"version=${project.version}\" >> \$GITHUB_OUTPUT"
 }
 
 exec {
-    commandLine "echo", "::set-output name=minecraftVersion::${minecraftVersion}"
+    commandLine "echo", "\"minecraftVersion=${minecraftVersion}\" >> \$GITHUB_OUTPUT"
 }
